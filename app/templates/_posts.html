@@ -1,0 +1,14 @@
+{% for post in posts %}
+<div class="post-preview">
+    <a href="{{ url_for('main.get_post', id=post.id) }}">
+    <h2 class="post-title">{{ post.title }}</h2>
+    <p class="post-meta">
+    <i class="fa fa-calendar" aria-hidden="true"></i> {{ post.timestamp.strftime('%Y-%m-%d') }} 
+    </p>
+    <div class="post-content-preview">
+        <p>{{ post.summary | safe }}</p>
+    </div>
+    <hr>
+</a>
+</div>
+{% endfor %}

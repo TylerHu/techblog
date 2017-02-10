@@ -1,0 +1,176 @@
+.intro-header .site-heading {
+    margin: 50px;
+}
+.intro-header .container {
+    background-image: url('/static/img/universe-explore.jpg');
+}
+.post-archive {
+    font-size: 16px;
+    line-height: 2;
+    margin-left: 150px;
+    color: #404040;
+}
+.post-archive h2 {
+    margin: 0 0 15px -51px;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: -1px;
+    background: #d8e2eb;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 100px;
+    color: #5483b1;
+}
+.archive-wrap {
+    position: relative;
+    border-left: 2px solid #d8e2eb;
+    margin-left: 140px;
+    padding: 3em 0;
+}
+ol, ul, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style-type: none;
+}
+.archive-wrap:before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d8e2eb;
+    top: 0;
+}
+
+.archive-wrap:after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d8e2eb;
+    bottom: 0;
+}
+.archive-wrap .listing li {
+    margin-bottom: 50px;
+    position: relative;
+}
+.date {
+    color: #23527c;
+}
+.title {
+    position: relative;
+    bottom: -4px;
+    display: block;
+    border-bottom: 1px solid #d8e2eb;
+    line-height: 1.2em;
+    padding: 0 30px;
+    max-width: 100%;
+    box-sizing: border-box;
+    color: #23527c;
+    display: inline-block;
+}
+.title:after {
+     content: '';
+     position: relative;
+     right: 0;
+     bottom: -4px;
+     width: 8px;
+     height: 8px;
+     border-radius: 50%;
+     background: #d8e2eb;
+ }
+.archive-wrap .listing li:hover a:after {
+    background: #5483b1;
+}
+.post-archive h2:before {
+    font-family: "FontAwesome" !important;
+    font-weight: normal;
+    content: "\f273";
+    margin-right: .1em;
+}
+.archive-wrap .listing li:hover a:before {
+    border: 1px solid #5483b1;
+    -webkit-box-shadow: 0 0 4px #5483b1 inset;
+    box-shadow: 0 0 4px #5483b1 inset;
+}
+.archive-wrap .listing li a:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    left: -11px;
+    bottom: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #d8e2eb;
+    -webkit-box-shadow: 0 0 4px #d8e2eb inset;
+    box-shadow: 0 0 4px #d8e2eb inset;
+}
+
+.archive-wrap .listing li:hover .tite {
+    border-bottom: 1px solid #5483b1;
+}
+
+.archive-wrap .listing li:hover .date {
+    border: 1px solid #5483b1;
+}
+.archive-wrap .listing li a:after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    left: -5px;
+    bottom: -4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d8e2eb;
+    -webkit-box-shadow: 0 0 3px #d8e2eb inset;
+    box-shadow: 0 0 3px #d8e2eb inset;
+}
+.archive-wrap .date {
+    position: absolute;
+    left: -112px;
+    width: 100px;
+    bottom: 0;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 15px 30px 0 15px;
+    border: 1px solid #d8e2eb;
+    -webkit-box-shadow: 0 0 4px #d8e2eb inset;
+    box-shadow: 0 0 4px #d8e2eb inset;
+}
+.archive-wrap .listing li a:hover {
+    color: #5483b1;
+}
+.archive-wrap .listing li a {
+    color: #333;
+}
+a:hover, a:active {
+    color: #40759b;
+}
+
+
+.archive-wrap .listing li:hover .title {
+    border-bottom: 1px solid #5483b1;
+}
+.archive-wrap .title:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d8e2eb;
+}
+.archive-wrap .listing li:hover .title:after {
+    background: #5483b1;
+}

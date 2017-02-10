@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/archives.css') }}"/>
+{% endblock %}
+
+{% block page_content %}
+<header class="intro-header">
+     <div class="container">
+         <div class="row">
+             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                 <div class="site-heading text-center">
+                     <h1>Archives</h1>
+                     <span class="subheading">文章归档列表</span>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </header>
+
+<div class="container">
+    <div class="post">
+        <div class="post-archive">
+        {% for archive_year in archive_posts %}
+            <div class="archive-wrap">
+                <h2>{{ archive_year }}</h2>
+                <ul class="listing">
+                    {% for post in archive_posts[archive_year] %}
+                    <li>
+                    <a href="{{ url_for('main.get_post', id=post.id) }}">
+                        <span class="date">{{ post.timestamp.strftime('%m-%d') }}</span>
+                        <span class="title">{{ post.title }}</span>
+                    </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

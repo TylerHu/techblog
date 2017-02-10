@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block head %}
+{{ super() }}
+<style>
+    .intro-header .container {
+        background-image: url('/static/img/orion-nebula.jpg');
+    }
+    .intro-header .site-heading {
+        margin: 50px;
+    }
+</style>
+{% endblock %}
+
+{% block page_content %}
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading text-center">
+                    <h1>Tags</h1>
+                    <span class="subheading">标签分类列表</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div id='tag_cloud' class="tags">
+            {% for tag in tags %}
+            <a href="#{{ tag.name }}" style="background-color: rgb(187, 187, 238);" title="{{ tag.name }}" rel="{{ tag.name.decode('utf-8')|length }}">{{ tag.name }}</a>
+            {% endfor %}
+            </div>
+
+            {% for tag in tags %}
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="{{ tag.name }}"> 
+                    <span class="tag-text">{{ tag.name }}</span>
+                </span>
+                <ul>
+                {% for post in tag.posts %}
+                <li class="post-preview">
+                    <a href="{{ url_for('main.get_post', id=post.id) }}">
+                    <h2 class="post-title">{{ post.title }}</h2>
+                    </a>
+                </li>
+                {% endfor %}
+                </ul>
+            </div>
+            <hr>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block head %}
+{{ super() }}
+<style>
+    .custom-container .post-preview:nth-of-type(1),
+    .custom-container .post-preview-poetry:nth-of-type(1) {
+        text-align: center;
+        background-repeat: no-repeat;
+        border-radius: 3px;
+        background-size: cover;
+        padding: 0;
+        height: 300px;
+        display: table;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.16);
+    }
+    .post-container img {
+        width: 300px;
+        height: 150px;
+    }
+</style>
+{% endblock %}
+
+{% block page_content %}
+<div class="container custom-container">
+    <div class="row" style="margin-top:65px;">
+        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
+            <div class="post-preview" style="background-image:url('/static/img/talkwithcode.png')">
+            </div>
+            {% include '_posts.html' %}
+            {% if pagination %}
+            <div class="pagination">
+                {{ macros.pagination_widget(pagination, '.index') }}
+            </div>
+            {% endif %}
+        </div>
+        <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+            <section class="visible-md visible-lg" style="padding: 0 18px">
+                <div class="short-about">
+                    <img src="/static/img/IMG_0729.jpg">
+                   <h5><a href="#">Tyler</a></h5>
+                   <p>技术博客 读书笔记 学习分享</p>
+                   <hr>
+                   <ul class="list-inline">
+                       <li>
+                           <a target="_blank" href="https://github.com/tylerhu">
+                               <span class="fa-stack fa-lg">
+                                   <i class="fa fa-circle fa-stack-2x"></i>
+                                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                   </span>
+                           </a>
+                       </li>
+                        <li>
+                            <a target="_blank" href="https://www.linkedin.com/in/tyler-hu-17269655">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                        </span>
+                            </a>
+                        </li>
+                        <li>
+                           <a target="_blank" href="https://www.zhihu.com/people/tyler-hu">
+                               <span class="fa-stack fa-lg">
+                                   <i class="fa fa-circle fa-stack-2x"></i>
+                                   <i class="fa  fa-stack-1x fa-inverse">知</i>
+                               </span>
+                           </a>
+                        </li> 
+                    </ul>
+               </div>
+            </section>
+
+            <section>
+                <div class="tags">
+                {% for tag in tags %}
+                <a href="{{ url_for('main.get_all_tags_and_posts') }}#{{ tag.name }}" title="{{ tag.name }}" rel="{{ tag.name.decode('utf-8')|length }}">{{ tag.name }}</a>
+                {% endfor %}
+                </div>
+            </section>
+    </div>
+</div>
+{% endblock %}
+
