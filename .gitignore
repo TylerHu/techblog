@@ -1,2 +1,10 @@
 ### .pyc files
 *.pyc
+
+### virtual environment files
+venv/**
+venv/
+
+### data migrations files
+migrations/**
+migrations/
